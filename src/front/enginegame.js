@@ -265,6 +265,10 @@ function engineGame(options, pieceTheme) {
 
     board = new ChessBoard('board', cfg);
 
+    $(window).resize(function() {
+        board.resize();
+    });
+
     return {
         reset: function() {
             game.reset();

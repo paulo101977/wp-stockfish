@@ -1,0 +1,13 @@
+.board-container .chess-board {
+    width: 100%;
+}
+
+@media (max-width:768px) {
+    .board-container .chess-board {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+    }
+} 
