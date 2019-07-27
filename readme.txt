@@ -8,10 +8,10 @@ This plugin is based on the [stockfish.js](https://github.com/nmrugg/stockfish.j
 
 ### TODO:
 
-. Make functional
-. Add menu change template
-. Add tag to insert plugin directly into html code
-. Add change color feature
++ Make functional
++ Add menu change template
++ Add tag to insert plugin directly into html code
++ Add change color feature
 
 
 ### License
