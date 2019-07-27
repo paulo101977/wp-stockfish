@@ -14,7 +14,7 @@ This plugin is based on the [stockfish.js](https://github.com/nmrugg/stockfish.j
 + Add bar meter
 + Make individual instances
 + Add popup promotion pawn
-
++ Load position from PGN and FEN
 
 ### License
 
