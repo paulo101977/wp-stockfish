@@ -17,3 +17,12 @@
 + Add tag to insert plugin directly into html code
  
 ### Fixed:
+
+## [0.0.3] - 2019-07-27
+
+### Added:
+### Changed:
++ Add board resize
++ Small fix layout
+ 
+### Fixed:
