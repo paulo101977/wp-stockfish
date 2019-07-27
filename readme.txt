@@ -16,4 +16,4 @@ This plugin is based on the [stockfish.js](https://github.com/nmrugg/stockfish.j
 
 ### License
 
-GPLv3 (see [license.txt](/paulo101977/wp-stockfish/master/license.txt))
+GPLv3 (see [license.txt](https://raw.githubusercontent.com/paulo101977/wp-stockfish/master/license.txt))
