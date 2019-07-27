@@ -3,7 +3,7 @@
     Plugin Name: WP Stockfish
     Description: This plugin lets you run the stockfish engine on wordpress!
     Author: Paulo Sérgio
-    Version: 0.0.3
+    Version: 0.0.4
     Author URI: https://github.com/paulo101977/
     License: GPL2
     */

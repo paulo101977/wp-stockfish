@@ -8,14 +8,52 @@ This plugin is based on the [stockfish.js](https://github.com/nmrugg/stockfish.j
 
 ### TODO:
 
++ hide in main screen if is post and show if widget
 + Add menu change template
 + Add change color feature
 + Fix template
 + Add bar meter
-+ Make individual instances
 + Add popup promotion pawn
 + Load position from PGN and FEN
 
 ### License
 
 GPLv3 (see [license.txt](https://raw.githubusercontent.com/paulo101977/wp-stockfish/master/license.txt))
+
+
+## [0.0.4] - 2019-07-27
+
+### Added:
+### Changed:
++ Make individual instances
+ 
+### Fixed:
+
+
+## [0.0.3] - 2019-07-27
+
+### Added:
+### Changed:
++ Add board resize
++ Small fix layout
+### Fixed:
+
+
+## [0.0.2] - 2019-07-27
+
+### Added:
+### Changed:
++ Make functional
++ Add tag to insert plugin directly into html code
+ 
+### Fixed:
+
+## [0.0.1] - 2019-07-27
+
+### Added:
+### Changed:
++ Add change log
++ Add Readme
++ Start WP Widget
++ Add license.txt
+### Fixed:

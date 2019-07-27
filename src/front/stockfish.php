@@ -1,6 +1,7 @@
 <?php
   $front_full_path  = plugins_url() . '/wp-stockfish/src/front/';
   $widget_full_path  = plugins_url() . '/wp-stockfish/src/widget/';
+  $id = md5(uniqid(rand(), true));
 ?>
 
 <div class="board-container">
@@ -14,7 +15,10 @@
   <div class="row">
     <div class="col-sm-7 col-md-6">
       <span class="h3" id="time1">0:05:00</span>
-      <div id="board" class="chess-board"></div>
+      <div 
+        id="board-<?php echo $id; ?>" 
+        class="chess-board">
+      </div>
       <span class="h3" id="time2">0:05:00</span>
       <hr>
       <div id="engineStatus">...</div>
@@ -56,7 +60,7 @@
     function init()
     {
       var pieceTheme = `<?php echo $front_full_path;?>/img/chesspieces/wikipedia/{piece}.png`;
-      var game = engineGame(null, pieceTheme);
+      var game = engineGame(null, pieceTheme, '<?php echo $id; ?>');
 
       newGame = function newGame() {
           var baseTime = parseFloat($('#timeBase').val()) * 60;

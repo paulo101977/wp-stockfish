@@ -1,7 +1,7 @@
-function engineGame(options, pieceTheme) {
-    options = options || {}
+function engineGame(options, pieceTheme, boardId) {
+    options = options || {};
     var game = new Chess();
-    var board;
+    var board = null;
 
 
     /// We can load Stockfish via Web Workers or via STOCKFISH() if loaded from a <script> tag.
@@ -263,7 +263,7 @@ function engineGame(options, pieceTheme) {
         pieceTheme: pieceTheme,
     };
 
-    board = new ChessBoard('board', cfg);
+    board = new ChessBoard(`board-${boardId}`, cfg);
 
     $(window).resize(function() {
         board.resize();
