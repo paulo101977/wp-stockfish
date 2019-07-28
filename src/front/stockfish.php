@@ -1,30 +1,20 @@
 <?php
-  $front_full_path  = plugins_url() . '/wp-stockfish/src/front/';
-  $widget_full_path  = plugins_url() . '/wp-stockfish/src/widget/';
-  $id = md5(uniqid(rand(), true));
+  $board_id = md5(uniqid(rand(), true));   
 ?>
-
 <div class="board-container">
-  <link rel="stylesheet" href="<?php echo $front_full_path;?>css/style.css">
-  <link rel="stylesheet" href="<?php echo $front_full_path;?>css/bootstrap.min.css">
-  <link rel="stylesheet" href="<?php echo $front_full_path;?>css/chessboard-0.3.0.min.css" />
-  <script src="<?php echo $front_full_path;?>js/jquery-1.10.1.min.js"></script>
-  <script src="<?php echo $front_full_path;?>js/bootstrap.min.js"></script>
-  <script src="<?php echo $front_full_path;?>js/chess.min.js"></script>
-  <script src="<?php echo $front_full_path;?>js/chessboard-0.3.0.min.js"></script>
-  <div class="row">
-    <div class="col-sm-7 col-md-6">
+  <div class="board-row">
+    <div class="board-col">
       <span class="h3" id="time1">0:05:00</span>
       <div 
-        id="board-<?php echo $id; ?>" 
+        id="board-<?php echo $board_id; ?>" 
         class="chess-board">
       </div>
-      <span class="h3" id="time2">0:05:00</span>
+      <span id="time2">0:05:00</span>
       <hr>
       <div id="engineStatus">...</div>
     </div>
-    <div class="col-sm-5 col-md-6">
-      <h3>Moves:</h3>
+    <div class="info-col">
+      <p class="board-moves">Moves:</p>
       <div id="pgn"></div>
       <hr>
       <!-- form -->
@@ -33,8 +23,8 @@
       <h5>Evaluation</h5>
       <pre id=evaluation></pre>
   </div>
-  <script src="<?php echo $front_full_path;?>enginegame.js"></script>
-  <script src="<?php echo $front_full_path;?>stockfish.js"></script>
+
+
   <script>
     var wait_for_script = false;
     var newGame = function (){};
@@ -59,18 +49,20 @@
     
     function init()
     {
-      var pieceTheme = `<?php echo $front_full_path;?>/img/chesspieces/wikipedia/{piece}.png`;
-      var game = engineGame(null, pieceTheme, '<?php echo $id; ?>');
+      var j$ =  jQuery.noConflict(); 
+      var pieceTheme = `<?php echo plugins_url('', dirname(__FILE__)) . '/front/img/chesspieces/wikipedia/{piece}.png'; ?>`;
+
+      var game = engineGame(null, pieceTheme, '<?php echo $board_id; ?>');
 
       newGame = function newGame() {
-          var baseTime = parseFloat($('#timeBase').val()) * 60;
-          var inc = parseFloat($('#timeInc').val());
-          var skill = parseInt($('#skillLevel').val());
+          var baseTime = parseFloat(j$('#timeBase').val()) * 60;
+          var inc = parseFloat(j$('#timeInc').val());
+          var skill = parseInt(j$('#skillLevel').val());
           game.reset();
           game.setTime(baseTime, inc);
           game.setSkillLevel(skill);
-          game.setPlayerColor($('#color-white').hasClass('active') ? 'white' : 'black');
-          game.setDisplayScore($('#showScore').is(':checked'));
+          game.setPlayerColor(j$('#color-white').hasClass('active') ? 'white' : 'black');
+          game.setDisplayScore(j$('#showScore').is(':checked'));
           game.start();
       }
       

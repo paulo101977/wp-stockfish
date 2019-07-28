@@ -1,4 +1,5 @@
 function engineGame(options, pieceTheme, boardId) {
+    var j$ = jQuery.noConflict();
     options = options || {};
     var game = new Chess();
     var board = null;
@@ -62,7 +63,7 @@ function engineGame(options, pieceTheme, boardId) {
                 status += (engineStatus.score.substr(0, 4) === "Mate" ? " " : ' Score: ') + engineStatus.score;
             }
         }
-        $('#engineStatus').html(status);
+        j$('#engineStatus').html(status);
     }
 
     function displayClock(color, t) {
@@ -81,7 +82,7 @@ function engineGame(options, pieceTheme, boardId) {
         if(isRunning) {
             display += sec & 1 ? ' <--' : ' <-';
         }
-        $(id).text(display);
+        j$(id).text(display);
     }
 
     function updateClock() {
@@ -139,7 +140,7 @@ function engineGame(options, pieceTheme, boardId) {
 
     function prepareMove() {
         stopClock();
-        $('#pgn').text(game.pgn());
+        j$('#pgn').text(game.pgn());
         board.position(game.fen());
         updateClock();
         var turn = game.turn() == 'w' ? 'white' : 'black';
@@ -265,7 +266,7 @@ function engineGame(options, pieceTheme, boardId) {
 
     board = new ChessBoard(`board-${boardId}`, cfg);
 
-    $(window).resize(function() {
+    j$(window).resize(function() {
         board.resize();
     });
 
